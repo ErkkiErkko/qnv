@@ -12,12 +12,12 @@ in the command line, where
 --input
 ```
 
-indicate the location of the protocol program, and
+indicates the location of the protocol program, and
 
 ```
 --topo
 ```
 
-indicate the location of the topology description.
+indicates the location of the topology description.
 
 This document would be refined later.
