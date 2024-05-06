@@ -69,6 +69,11 @@ class QNV(Visitor[PConfiguration, list]):
         ret3 = stmt.expr3.accept(self, ctx)
         ctx.sw(stmt.ident.value, ret1, ret2, ret3, self.topo)
     
+    def visitDe(self, stmt: De, ctx: PConfiguration) -> None:
+        ret1 = stmt.expr1.accept(self, ctx)
+        ret2 = stmt.expr2.accept(self, ctx)
+        ctx.de(ret1, ret2, self.topo)
+    
     def visitAssertion(self, stmt: Assertion, ctx: PConfiguration) -> None:
         retc = stmt.cond.accept(self, ctx)
         ctx1 = PConfiguration(list())

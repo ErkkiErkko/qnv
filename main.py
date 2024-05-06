@@ -24,7 +24,7 @@ def readCode(fileName):
         return f.read()
 
 
-# The parser stage: MiniDecaf code -> Abstract syntax tree
+# The parser stage: QNV code -> Abstract syntax tree
 def step_parse(args: argparse.Namespace):
     code = readCode(args.input)
     r: Program = parser.parse(code, lexer=lexer)

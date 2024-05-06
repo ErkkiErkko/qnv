@@ -48,6 +48,9 @@ class Visitor(Protocol[T, U]):  # type: ignore
     
     def visitAssignmentSw(self, that: AssignmentSw, ctx: T) -> Optional[U]:
         return self.visitOther(that, ctx)
+    
+    def visitDe(self, that: De, ctx: T) -> Optional[U]:
+        return self.visitOther(that, ctx)
 
     def visitAssertion(self, that: Assertion, ctx: T) -> Optional[U]:
         return self.visitOther(that, ctx)

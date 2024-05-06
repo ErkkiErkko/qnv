@@ -1,0 +1,15 @@
+ret1 = cr(1, 3);
+ret2 = cr(3, 4);
+ret3 = cr(4, 5);
+if(ret1 != 0 && ret2 != 0) {
+    ret4 = sw(1, 4@ 3);
+    if(ret4 == 0) {
+        de(4, 5);
+    }
+    else {
+        pass;
+    }
+}
+else {
+    pass;
+}

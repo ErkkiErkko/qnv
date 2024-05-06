@@ -60,6 +60,7 @@ def p_statement(p):
     statement : assignment
         | assignment_cr
         | assignment_sw
+        | de_statement
         | assertion
         | pass_statement
         | forget_statement
@@ -100,6 +101,13 @@ def p_assignment_sw(p):
     assignment_sw : Identifier Assign Sw LParen expression Comma expression At expression RParen Semi
     """
     p[0] = AssignmentSw(p[1], p[5], p[7], p[9])
+
+
+def p_de_statement(p):
+    """
+    de_statement : De LParen expression Comma expression RParen Semi
+    """
+    p[0] = De(p[3], p[5])
 
 
 def p_assertion(p):

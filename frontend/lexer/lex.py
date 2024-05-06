@@ -17,6 +17,7 @@ reserved = {
     "while": "While",
     "cr": "Cr",
     "sw": "Sw",
+    "de": "De",
     "assert": "Assert",
     "pass": "Pass",
     "forget": "Forget"

@@ -183,6 +183,30 @@ class AssignmentSw(Statement):
         return v.visitAssignmentSw(self, ctx)
     
 
+class De(Statement):
+    """
+    AST node of de_statement.
+    """
+
+    def __init__(
+        self,
+        expr1: Expression,
+        expr2: Expression
+    ) -> None:
+        super().__init__("de")
+        self.expr1 = expr1
+        self.expr2 = expr2
+
+    def __getitem__(self, key: int) -> Node:
+        return (self.expr1, self.expr2)[key]
+
+    def __len__(self) -> int:
+        return 2
+
+    def accept(self, v: Visitor[T, U], ctx: T):
+        return v.visitDe(self, ctx)
+    
+
 class Assertion(Statement):
     """
     AST node of assertion.
